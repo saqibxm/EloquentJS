@@ -37,5 +37,7 @@ function DominantDirection(text)
     return directions.reduce((previous, current) => current.value < previous.value ? previous : current).name;
 }
 
+// directions.reduce((current, ({name, value}) => ...)
+
 console.log(DominantDirection("Hello!")); // ltr
 console.log(DominantDirection("Hey, مساء الخير")); // rtl
