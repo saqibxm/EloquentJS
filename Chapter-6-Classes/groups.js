@@ -33,9 +33,9 @@ class Group /* extends Set */
         }
         */
         let index = this.#group.indexOf(value);
-        if(index)
+        if(index !== -1)
         {
-            this.#group = this.#group.splice(index, 1);
+            this.#group.splice(index, 1);
             // this.#group = this.#group.filter(v => v != value);
             // this.#group = this.#group.slice(0, index).concat(this.#group.slice(index + 1));
         }

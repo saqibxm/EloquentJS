@@ -22,7 +22,7 @@ class Group
     delete(value)
     {
         let index = this.storage.indexOf(value);
-        if(index) this.storage = this.storage.splice(index, 1);
+        if(index !== -1) this.storage.splice(index, 1);
     }
 
     has(value)
