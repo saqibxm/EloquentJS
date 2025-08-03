@@ -10,7 +10,8 @@ class Group /* extends Set */
         return group;
     }
 
-    [Symbol.iterator] = function() {
+    [Symbol.iterator]()
+    {
         return this.#group.values();
     }
 
