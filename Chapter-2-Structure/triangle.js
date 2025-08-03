@@ -1,4 +1,4 @@
-function PrintTriangle(n)
+function printTriangle(n)
 {
     for(let i = 0; i < n; ++i)
     {
@@ -8,4 +8,4 @@ function PrintTriangle(n)
     }
 }
 
-PrintTriangle(6);
+printTriangle(6);

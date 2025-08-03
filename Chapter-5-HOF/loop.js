@@ -1,4 +1,4 @@
-function Loop(value, test, update, body)
+function loop(value, test, update, body)
 {
     let v = value;
 
@@ -9,6 +9,6 @@ function Loop(value, test, update, body)
     }
 }
 
-Loop(0, i => i < 10, i => ++i, i => {
+loop(0, i => i < 10, i => ++i, i => {
     console.log('value:', i);
 });

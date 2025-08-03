@@ -1,21 +1,30 @@
-function Prepend(list, value)
+function prepend(list, value)
 {
     const node = { value, rest: list };
     return node;
 }
 
-function ArrayToList(array)
+function arrayToList(array)
+{
+    let list = null;
+    for(let i = array.length - 1; i >= 0; --i)
+        list = prepend(list, array[i]);
+
+    return list;
+}
+
+function arrayToListOld(array)
 {
     let list = null;
     for(let e of array.reverse())
     {
-        list = Prepend(list, e);
+        list = prepend(list, e);
     }
 
     return list;
 }
 
-function ListToArray(list)
+function listToArray(list)
 {
     console.assert(list, "Required a valid list node/object!")
     let node = {...list};
@@ -30,7 +39,7 @@ function ListToArray(list)
     return array;
 }
 
-function NthElement(list, n)
+function nthElement(list, n)
 {
     let node = {...list};
     for(let i = 0; i < n && node; ++i)
@@ -39,10 +48,10 @@ function NthElement(list, n)
     return node?.value; // value, undefined otherwise
 }
 
-function NthRecursive(node, n)
+function nthRecursive(node, n)
 {
     if(n == 0 || node == undefined) return node?.value;
-    return NthRecursive(node.rest, n - 1);
+    return nthRecursive(node.rest, n - 1);
 }
 
 /*
@@ -56,9 +65,9 @@ function NthRecursiveFancy(node, n)
 */
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const list = ArrayToList(array);
+const list = arrayToList(array);
 
 console.log("Converted to List:", list);
-console.log("Converted to Array:", ListToArray(list));
-console.log("Element at Index 5:", NthElement(list, 5));
-console.log("Element at Index 5 Recursively:", NthRecursive(list, 5));
+console.log("Converted to Array:", listToArray(list));
+console.log("Element at Index 5:", nthElement(list, 5));
+console.log("Element at Index 5 Recursively:", nthRecursive(list, 5));

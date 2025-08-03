@@ -1,4 +1,4 @@
-function PrintChessBoardOld()
+function printChessBoardOld()
 {
     const GRID_SIZE = 8*8;
 
@@ -14,7 +14,7 @@ function PrintChessBoardOld()
     }
 }
 
-function PrintChessBoard(size)
+function printChessBoard(size)
 {
     return () => {
         for(let i = 0; i < size; ++i)
@@ -28,5 +28,5 @@ function PrintChessBoard(size)
     }
 }
 
-let printer = PrintChessBoard(16);
+let printer = printChessBoard(16);
 printer();

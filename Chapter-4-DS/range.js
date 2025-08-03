@@ -1,4 +1,4 @@
-function RangeOld(lo, hi, step = 1)
+function rangeOld(lo, hi, step = 1)
 {
     if(hi == undefined)
     {
@@ -51,6 +51,13 @@ function range(lo, hi, step = lo < hi ? 1 : -1)
     return decreasing ? ret.reverse() : ret;
 }
 
+function sum(array)
+{
+    let sum = 0;
+    for(let e of array)
+        sum += e;
+    return sum;
+}
 
 console.log("Ascending Range:", range(0, 100));
 console.log("Descending Range:", range(100, 0, -2));

@@ -1,4 +1,4 @@
-function DeepEqualOld(lhs, rhs)
+function deepEqualOld(lhs, rhs)
 {
     if((lhs && rhs) && (typeof lhs == 'object' && typeof rhs == 'object'))
         return lhs === rhs;
@@ -16,7 +16,7 @@ function DeepEqualOld(lhs, rhs)
     return propCount == keys.length;
 }
 
-function DeepEqual(lhs, rhs)
+function deepEqual(lhs, rhs)
 {
     if((lhs && rhs) && (typeof lhs == 'object' && typeof rhs == 'object'))
     {
@@ -26,7 +26,7 @@ function DeepEqual(lhs, rhs)
         for(let key of keys)
         {
             ++propCount;
-            if(key in lhs && DeepEqual(lhs[key], rhs[key])) continue;
+            if(key in lhs && deepEqual(lhs[key], rhs[key])) continue;
             else return false;
         }
         return propCount == keys.length;
@@ -35,4 +35,4 @@ function DeepEqual(lhs, rhs)
         return lhs === rhs;
 }
 
-console.log("Lhs and Rhs is equal:", DeepEqual({name: "Saqib", education: "inter"}, {name: "Saqib", education: "inter"}));
+console.log("Lhs and Rhs is equal:", deepEqual({name: "Saqib", education: "inter"}, {name: "Saqib", education: "inter"}));

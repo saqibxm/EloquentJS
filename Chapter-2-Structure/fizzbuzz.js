@@ -1,4 +1,4 @@
-function FizzBuzzString(number)
+function fizzBuzzString(number)
 {
     if(number % 3 == 0 && number % 5 == 0)
         return 'FizzBuzz';
@@ -12,7 +12,7 @@ function FizzBuzzString(number)
 }
 
 
-function FizzBuzz(min, max)
+function fizzBuzz(min, max)
 {
     if(min == undefined || !min) min = 1;
     if(max == undefined || !max) max = 100;
@@ -20,8 +20,8 @@ function FizzBuzz(min, max)
 
     for(let i = min; i <= max; ++i)
     {
-        console.log(FizzBuzzString(i));
+        console.log(fizzBuzzString(i));
     }
 }
 
-FizzBuzz(1, 100);
+fizzBuzz(1, 100);

@@ -25,11 +25,11 @@ function countBy(items, groupName) {
     return counts;
 }
 
-function DominantDirection(text)
+function dominantDirection(text)
 {
     let directions = countBy(text, char => {
         return characterScript(char.codePointAt(0))?.direction ?? "unknown";
-    }).filter(({name}) => name != "unknown");
+    }).filter(({name}) => name !== "unknown");
 
     if(!directions.length)
         return "No direction";
@@ -39,5 +39,5 @@ function DominantDirection(text)
 
 // directions.reduce((current, ({name, value}) => ...)
 
-console.log(DominantDirection("Hello!")); // ltr
-console.log(DominantDirection("Hey, مساء الخير")); // rtl
+console.log(dominantDirection("Hello!")); // ltr
+console.log(dominantDirection("Hey, مساء الخير")); // rtl
