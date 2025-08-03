@@ -16,7 +16,7 @@ class Group /* extends Set */
 
     add(value)
     {
-        if(!this.#group.includes(value))
+        if(!this.has(value))
             this.#group.push(value);
     }
 
@@ -47,7 +47,7 @@ class Group /* extends Set */
     }
 
     values() {
-        return this.#group.values();
+        return this.#group.values(); // iterator to the underlying array
     }
     
     #group = []

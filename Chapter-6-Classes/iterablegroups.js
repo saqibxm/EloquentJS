@@ -15,7 +15,7 @@ class Group
 
     add(value)
     {
-        if(!this.storage.includes(value))
+        if(!this.has(value))
             this.storage.push(value);
     }
 
