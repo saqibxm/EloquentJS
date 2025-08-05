@@ -9,7 +9,7 @@ class PGroup
     {
         let group = new this();
         for(let v of iterable)
-            if(!group.data.includes(v))
+            if(!group.has(v))
                 group.data.push(v);
         return group;
     }
